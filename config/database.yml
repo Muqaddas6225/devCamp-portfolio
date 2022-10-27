@@ -23,6 +23,9 @@ default: &default
   host: localhost
   username: railsdevuser
   password: password
+  
+  
+  
 development:
   <<: *default
   database: DevcampPortfolio_development
