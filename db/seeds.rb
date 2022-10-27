@@ -30,7 +30,7 @@ puts "5 skills created"
         body:"ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam vol
         uptatem quia voluptas sit aspernatur aut odit aut fugit, 
         sed quia consequuntur magni dolores eos qui ratione ",
-        main_image:"https://via.placeholder.com/600x400"
+        main_image:"https://via.placeholder.com/350x200"
         
 )
 end
