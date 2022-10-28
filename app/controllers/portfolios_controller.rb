@@ -42,4 +42,14 @@ class PortfoliosController < ApplicationController
       def show
         @portfolios_item = Portfolio.find(params[:id])
       end
+
+      def destroy
+        @portfolios_item = Portfolio.find(params[:id])
+        @portfolios_item.destroy
+
+        respond_to do |format|
+            format.html { redirect_to portfolios_url, notice: "Record was successfully destroyed." }
+        end
+
+      end
 end
