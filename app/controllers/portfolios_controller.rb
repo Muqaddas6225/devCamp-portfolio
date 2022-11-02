@@ -4,16 +4,23 @@ class PortfoliosController < ApplicationController
         @portfolios_item = Portfolio.all
     end
 
+    def angular
+      @angular_portfolios_item = Portfolio.angular
+    end
+
+
     def new
         @portfolios_item = Portfolio.new
+
+        # hard coded for now
+        3.times {@portfolios_item.technologies.build} 
     end
 
-    def edit
-        @portfolios_item = Portfolio.find(params[:id])
-    end
 
     def create
-        @portfolios_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle,:body))
+        @portfolios_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle,:body, 
+        technologies_attributes: [:name]
+        ))
     
         respond_to do |format|
           if @portfolios_item.save
@@ -25,6 +32,11 @@ class PortfoliosController < ApplicationController
           end
         end
       end
+
+
+    def edit
+      @portfolios_item = Portfolio.find(params[:id])
+    end
 
       def update
         @portfolios_item = Portfolio.find(params[:id])
