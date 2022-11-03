@@ -64,6 +64,7 @@ group :development do
   # gem "spring"
   gem 'friendly_id', '~> 5.1.0'
   gem 'devise', '~> 4.8', '>= 4.8.1'
+  gem 'ostruct', '~> 0.1.0'
 
 end
 
