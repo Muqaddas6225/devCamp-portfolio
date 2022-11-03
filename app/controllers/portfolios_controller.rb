@@ -34,6 +34,7 @@ layout "portfolio"
 
     def edit
       @portfolios_item = Portfolio.find(params[:id])
+     
     end
 
       def update

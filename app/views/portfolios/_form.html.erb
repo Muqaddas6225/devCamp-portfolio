@@ -1,0 +1,41 @@
+
+<%= form_for(@portfolios_item) do |form| %>
+   
+    <div class="field" >
+      <%= form.label :title%>
+      <%= form.text_field :title %>
+    </div>
+
+
+    <div class="field" >
+      <%= form.label :subtitle %>
+      <%= form.text_field :subtitle %>
+    </div>
+  
+  
+    <div class="field" >
+      <%= form.label :body%>
+      <%= form.text_area :body %>
+    </div>
+
+    <ul>
+
+    <%=
+    # form is the block variable , 
+    # fields_for special wiring up connection in rails form inherited  from form_for gives us 
+    # the ability to create nested forms or nested attributes
+    %>
+
+      <%=form.fields_for :technologies do |technology_form| %>
+      <li>
+      <%= technology_form.label :name %>
+      <%= technology_form.text_field :name %>
+      </li>
+      <%end%>
+    </ul>
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+
+  <% end %>
